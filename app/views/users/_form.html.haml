@@ -1,0 +1,16 @@
+= semantic_form_for @user do |f|
+  -if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+  = f.inputs :name => "User information from LDAP" do
+    = f.input :first_name, :input_html => { :disabled => true }
+    = f.input :last_name, :input_html => { :disabled => true }
+    = f.input :kth_username, :input_html => { :disabled => true }
+    = f.input :username, :input_html => { :disabled => true }
+  = f.inputs :name => "User editable" do
+    = f.input :email
+  = f.buttons do
+    = f.commit_button

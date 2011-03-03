@@ -1,0 +1,10 @@
+This is a basic rails project for building some kind of web application for KTH users.
+
+It uses Device/CAS to authenticate users against KTH's CAS server https://login.kth.se, and on successful authentication automatically imports user information from the KTH LDAP server.
+
+This is nothing more than a standard rails scaffold (on users), with the addition of cas authentication and ldap import.
+
+I've done these kinds of applications a couple of times, and I'm getting slightly bored with rewriting this functionality every time.
+
+I added formtastic and cancan to the gemfile because they're generally something I want (the user/edit form actually uses formtastic).
+
